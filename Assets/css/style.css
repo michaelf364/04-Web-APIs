@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap');
+
+
+html {
+    position: relative;
+    min-height: 100%;
+  }
+  body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    font-family: 'Noto Serif', serif;
+  }
+  .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    line-height: 60px; /* Vertically center the text there */
+  }
+  footer.container{
+      width: 100%;
+  }
+main.container{
+    padding: 10px;
+    margin-left: 20px;
+    margin-right: auto;
+}
+.h-divider{
+    height: 2px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: white;
+}
+.nav-item{
+    color: white;
+}
+.navbar-brand{
+    color: white;
+}
+h2{
+    color: white;
+}
+h5.card-title{
+    color: white;
+}
+label{
+    color: white;
+}
+.h-divider{
+    height: 2px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    margin-left: -10px;
+    background-color: white;
+}
+.custom-control-input:checked ~ .custom-control-label::before {
+  background-color: #272B30;
+}
+.custom-range::-webkit-slider-thumb {
+  background: #272B30;
+}
+
+@media (min-width: 980px) {
+    main.container{
+        max-width: 50%;
+        margin-left: 20px;
+    }
+}
+@media (max-width: 640px) {
+    main.container{
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+@media (min-width: 768px) {
+    main.container{
+        margin-left: 10px;
+    }
+}
