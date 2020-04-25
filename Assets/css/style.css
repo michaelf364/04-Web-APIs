@@ -60,6 +60,7 @@ label{
 .custom-range::-webkit-slider-thumb {
   background: #272B30;
 }
+  
 
 @media (min-width: 980px) {
     main.container{

@@ -14,6 +14,9 @@
   <header>
     <nav class="navbar navbar-expand navbar-dark bg-dark flex-column flex-md-row mb-3">
       <a class="navbar-brand mr-md-auto mr-sm-0" href="./index.html">Javascript Quiz</a>
+      <div class="time row">
+        <div class="h4" id="minutes">5 <span class="h6" id="seconds">00</span></div>
+      </div>
     </nav>
   </header>
   <main class="container bg-primary" id="main">
@@ -26,7 +29,19 @@
       <div class="col">
         <section class="h-divider"></section>
       </div>
-
+    </section>
+    <section class="row">
+      <div class="col">
+        <h5 id="quizQuestion">          
+        </h5>
+      </div>
+    </section>
+    <section class="row">
+      <div class="col">
+        <ul id="quizAnswer">
+        </ul>
+      </div>
+    </section>
   </main>
   <footer class="footer border-top bg-primary">
     <div class="container bg-primary">
