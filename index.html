@@ -28,7 +28,7 @@
         </hr>
       </div>
     </section>
-    <section class="row mx-auto" id="startScn">
+    <section class="row" id="startScn">
       <div class="col-sm-12 col-md-6">
         <button class="btn btn-primary" type="button" id="startBtn">Start</button>
       </div>
@@ -60,9 +60,10 @@
         <h2 class="col">You Win!!</h2>
       </div>
       <div class="row justify-content-center">
-        <div class="form-group col">
-          <input type="text" class="form-control" placeholder="Your Name" id="nameInput">
-        </div>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Your Name" id="nameInput">
+          <button class="btn btn-primary my-2 my-sm-0" type="button" id="submitBtn">Submit</button>
+        </form>
       </div>
       <div class="row justify-content-center">
         <h3>You had <span id="score"></span> seconds remaining</h3>
@@ -94,8 +95,8 @@
     </section>
     <section id="highScoreScn">
       <h2 class="row justify-content-center">High Scores:</h2>
-      <ul id="highScoresList">
-      </ul>
+      <ol id="highScoresList">
+      </ol>
       <div class="row justify-content-center">
         <button type="button" class="btn btn-primary" id="backBtn">Back</button>
       </div>

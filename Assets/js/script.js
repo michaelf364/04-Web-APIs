@@ -1,31 +1,32 @@
 //start screen
-var startScn = document.getElementById("startScn");
-var startBtn = document.getElementById("startBtn");
-var highScoresBtn = document.getElementById("highScoresBtn");
+var startScn = document.querySelector("#startScn");
+var startBtn = document.querySelector("#startBtn");
+var highScoresBtn = document.querySelector("#highScoresBtn");
 
 //question screen
-var questionScn = document.getElementById("questionScn");
-var timeLeft = document.getElementById("timeLeft");
-var currentQuestion = document.getElementById("currentQuestion");
-var answers = document.getElementById("answers");
-var results = document.getElementById("results");
+var questionScn = document.querySelector("#questionScn");
+var timeLeft = document.querySelector("#timeLeft");
+var currentQuestion = document.querySelector("#currentQuestion");
+var answers = document.querySelector("#answers");
+var results = document.querySelector("#results");
 
 //victory screen
-var victoryScn = document.getElementById("victoryScn");
-var nameInput = document.getElementById("nameInput");
-var score = document.getElementById("score");
-var playAgainVSBtn = document.getElementById("playAgainVSBtn");
-var highScoresVSBtn = document.getElementById("highScoresVSBtn");
+var victoryScn = document.querySelector("#victoryScn");
+var nameInput = document.querySelector("#nameInput").value;
+var submitBtn = document.querySelector("#submitBtn");
+var score = document.querySelector("#score");
+var playAgainVSBtn = document.querySelector("#playAgainVSBtn");
+var highScoresVSBtn = document.querySelector("#highScoresVSBtn");
 
 //defeat screen
-var defeatScn = document.getElementById("defeatScn");
-var playAgainDSBtn = document.getElementById("playAgainDSBtn");
-var highScoresDSBtn = document.getElementById("highScoresDSBtn");
+var defeatScn = document.querySelector("#defeatScn");
+var playAgainDSBtn = document.querySelector("#playAgainDSBtn");
+var highScoresDSBtn = document.querySelector("#highScoresDSBtn");
 
 //high score screen
-var highScoreScn = document.getElementById("highScoreScn");
-var highScoresList = document.getElementById("highScoresList");
-var backButton = document.getElementById("backButton");
+var highScoreScn = document.querySelector("#highScoreScn");
+var highScoresList = document.querySelector("#highScoresList");
+var backButton = document.querySelector("#backButton");
 
 var currentIndex;
 var timeLeft;
@@ -100,7 +101,7 @@ startBtn.addEventListener("click", function () {
     victoryScn.style.display = "none";
     defeatScn.style.display = "none";
     highScoreScn.style.display = "none";
-    ShowQuestionScn(currentIndex);
+    displayQuestionScn(currentIndex);
     startTimer();
     timeLeftSpan.textContent = timeLeft;
 });
@@ -109,16 +110,28 @@ highScoresBtn.addEventListener("click", function () {
     renderHighScores();
     displayHighScoreScreen();
 });
+
 highScoresVSBtn.addEventListener("click", function () {
     renderHighScores();
     displayHighScoreScreen();
 });
+
 highScoresDSBtn.addEventListener("click", function () {
     renderHighScores();
     displayHighScoreScreen();
 });
 
-function ShowQuestionScn(index) {
+playAgainDSBtn.addEventListener("click", function () {
+    initialize();
+});
+
+playAgainVSBtn.addEventListener("click", function () {
+    initialize();
+});
+
+
+
+function displayQuestionScn(index) {
     answers.innerHTML = "";
     currentQuestion.textContent = questions[index].question;
     for (var i = 0; i < questions[index].choices.length; i++) {
@@ -153,7 +166,7 @@ answers.addEventListener("click", function (playerAnswer) {
             checkScore();
             return;
         }
-        ShowQuestionScn(currentIndex);
+        displayQuestionScn(currentIndex);
     }
 });
 
@@ -186,7 +199,7 @@ function startTimer() {
     }, 1000)
 }
 
-function DisplayDefeatScreen(){
+function DisplayDefeatScreen() {
     questionScn.style.display = "none";
     startScn.style.display = "none";
     victoryScn.style.display = "none";
@@ -218,7 +231,10 @@ function checkScore() {
 
     for (var i = 0; i < highScores.length; i++) {
         if (timeLeft > parseInt(highScores[i].score)) {
-            highScore.name = nameInput.textContent;
+            submitBtn.addEventListener("click", function () {
+                highScores.name = nameInput;
+                console.log(highScores.name);
+            })
             highScores.splice(i, 0, highScore);
             highScores.splice(5, 1);
             saveScores();
@@ -231,7 +247,7 @@ function renderHighScores() {
     highScoresList.innerHTML = "";
     for (var i = 0; i < highScores.length; i++) {
         var score = document.createElement("li");
-        score.textContent = ((i + 1) + ".  " + highScores[i].name + ":  " + highScores[i].score);
+        score.textContent = (" " + highScores[i].name + ":  " + highScores[i].score);
         highScoresList.appendChild(score);
     }
 }
