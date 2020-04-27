@@ -24,7 +24,7 @@ var highScoresDSBtn = document.getElementById("highScoresDSBtn");
 
 //high score screen
 var highScoreScn = document.getElementById("highScoreScn");
-var highScores = document.getElementById("highScores");
+var highScoresList = document.getElementById("highScoresList");
 var backButton = document.getElementById("backButton");
 
 var currentIndex;

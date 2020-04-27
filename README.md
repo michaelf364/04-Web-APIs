@@ -2,7 +2,7 @@
 
 [Javascript Quiz](#Javascript-Quiz)
 
-[Technology-Used](#Technology-Used)
+[Technology Used](#Technology-Used)
 
 [Screenshots](#Screenshots)
 
