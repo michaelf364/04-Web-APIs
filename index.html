@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Password Generator</title>
+  <title>Javascrpt Quiz</title>
   <link rel="stylesheet" type="text/css" href="./Assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="./Assets/css/style.css" />
 </head>
@@ -14,9 +14,6 @@
   <header>
     <nav class="navbar navbar-expand navbar-dark bg-dark flex-column flex-md-row mb-3">
       <a class="navbar-brand mr-md-auto mr-sm-0" href="./index.html">Javascript Quiz</a>
-      <div class="time row">
-        <div class="h4" id="minutes">5 <span class="h6" id="seconds">00</span></div>
-      </div>
     </nav>
   </header>
   <main class="container bg-primary" id="main">
@@ -27,19 +24,79 @@
     </section>
     <section class="row">
       <div class="col">
-        <section class="h-divider"></section>
+        <hr class="h-divider">
+        </hr>
       </div>
     </section>
-    <section class="row">
-      <div class="col">
-        <h5 id="quizQuestion">          
-        </h5>
+    <section class="row mx-auto" id="startScn">
+      <div class="col-sm-12 col-md-6">
+        <button class="btn btn-primary" type="button" id="startBtn">Start</button>
+      </div>
+      <div class="col-sm-12 col-md-6">
+        <button class="btn btn-primary" type="button" id="highScoresBtn">High Scores</button>
       </div>
     </section>
-    <section class="row">
-      <div class="col">
-        <ul id="quizAnswer">
-        </ul>
+    <section id="questionScn">
+      <div>Time: <span id="timeLeftSpan"></span></div>
+      <div class="row w-50 mx-auto">
+        <div class="col" id="currentQuestion">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <ul id="answers">
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div id="results">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="victoryScn">
+      <div class="row justify-content-center">
+        <h2 class="col">You Win!!</h2>
+      </div>
+      <div class="row justify-content-center">
+        <div class="form-group col">
+          <input type="text" class="form-control" placeholder="Your Name" id="nameInput">
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <h3>You had <span id="score"></span> seconds remaining</h3>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <button class="btn btn-primary" type="button" id="playAgainVSBtn">Play Again</button>
+        </div>
+        <div class="col-sm-12 col-md-6">
+          <button class="btn btn-primary" type="button" id="highScoresVSBtn">High Scores</button>
+        </div>
+      </div>
+    </section>
+    <section id="defeatScn">
+      <div class="row justify-content-center">
+        <h2 class="col">You Lost</h2>
+      </div>
+      <div class="row justify-content-center">
+        <h3 class="col"> Please Try Again</h3>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <button class="btn btn-primary" type="button" id="playAgainDSBtn">Try Again</button>
+        </div>
+        <div class="col-sm-12 col-md-6">
+          <button class="btn btn-primary" type="button" id="highScoresDSBtn">High Scores</button>
+        </div>
+      </div>
+    </section>
+    <section id="highScoreScn">
+      <h2 class="row justify-content-center">High Scores:</h2>
+      <ul class="row justify-content-center" id="highScoresList"></ul>
+      <div class="row justify-content-center">
+        <button type="button" class="btn btn-primary" id="backBtn">Back</button>
       </div>
     </section>
   </main>

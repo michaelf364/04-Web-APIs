@@ -10,6 +10,9 @@ html {
     margin-bottom: 60px;
     font-family: 'Noto Serif', serif;
   }
+  button{
+      margin-top: 4px;
+  }
   .footer {
     position: absolute;
     bottom: 0;
@@ -32,19 +35,10 @@ main.container{
     margin-bottom: 5px;
     background-color: white;
 }
-.nav-item{
-    color: white;
-}
 .navbar-brand{
     color: white;
 }
 h2{
-    color: white;
-}
-h5.card-title{
-    color: white;
-}
-label{
     color: white;
 }
 .h-divider{
